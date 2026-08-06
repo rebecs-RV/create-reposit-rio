@@ -1,0 +1,344 @@
+/* --- PALETA DE CORES (ADAPTE CONFORME NECESSÁRIO) --- */
+:root {
+    --cor-gradiente-inicio: #ffb79a; /* Azul claro principal */
+    --cor-gradiente-fim: #5e670e;   /* Azul escuro principal */
+    --cor-primaria-forte: #0e3e67;   /* Azul escuro para títulos/botões */
+    --cor-primaria-hover: #9ad3ff;  /* Azul claro para hover */
+    --cor-secundaria: #0e3e67;     /* Mantido como azul escuro para links/botões de ação */
+
+    /* Cores para o card e textos */
+    --cor-fundo-card-base: #ffffff;
+    --cor-fundo-card-transparente: rgba(255, 255, 255, 0.85);
+    --cor-texto-principal: #333333;
+    --cor-texto-label: #555555;
+    --cor-borda-suave: rgba(255, 255, 255, 0.3);
+    --cor-foco-input: var(--cor-primaria-forte);
+    --cor-placeholder: #aaaaaa;
+    --cor-icone: #777777;
+    --cor-erro: #d9534f;
+}
+/* ------------------------------------------------------- */
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, var(--cor-gradiente-inicio), var(--cor-gradiente-fim));
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- Estilos gerais para Login e Cadastro Wrapper/Card --- */
+.login-wrapper,
+.cadastro-wrapper { /* Reutilizamos a estrutura do wrapper */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-card,
+.cadastro-card { /* Reutilizamos a estrutura do card */
+    background-color: var(--cor-fundo-card-transparente);
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--cor-borda-suave);
+}
+
+.login-card h2,
+.cadastro-card h2 {
+    margin-bottom: 10px;
+    color: var(--cor-primaria-forte);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.login-card .subtitle,
+.cadastro-card .subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: var(--cor-texto-label);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto-label);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    color: var(--cor-icone);
+    font-size: 16px;
+    z-index: 2;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 14px 50px;
+    border: 1px solid var(--cor-borda-suave);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--cor-texto-principal);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-with-icon input::placeholder {
+    color: var(--cor-placeholder);
+    font-weight: 400;
+}
+
+.input-with-icon input:focus {
+    outline: none;
+    border-color: var(--cor-foco-input);
+    box-shadow: 0 0 0 3px rgba(14, 62, 103, 0.25);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-icone);
+    font-size: 16px;
+    z-index: 2;
+    padding: 5px;
+}
+
+.toggle-password:hover {
+    color: var(--cor-primaria-forte);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+/* Ajustes específicos para o formulário de cadastro */
+.cadastro-options {
+    align-items: flex-start; /* Alinha os itens da opção de cadastro (checkbox) */
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--cor-primaria-forte);
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: 400;
+    color: var(--cor-texto-label);
+    cursor: pointer;
+    text-transform: none;
+    font-size: 13px;
+}
+
+.checkbox-group label a.termos-link { /* Estilo para o link de Termos */
+    color: var(--cor-primaria-forte);
+    text-decoration: none;
+    font-weight: 600;
+}
+.checkbox-group label a.termos-link:hover {
+    color: var(--cor-primaria-hover);
+    text-decoration: underline;
+}
+
+
+.forgot-password {
+    color: var(--cor-primaria-forte);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--cor-primaria-hover);
+    text-decoration: underline;
+}
+
+.btn-login,
+.btn-cadastro { /* Botões de login e cadastro */
+    width: 100%;
+    padding: 14px 20px;
+    background-color: var(--cor-primaria-forte);
+    color: var(--cor-texto-escuro);
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-login:hover,
+.btn-cadastro:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 62, 103, 0.3);
+}
+
+.btn-login:active,
+.btn-cadastro:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.login-footer,
+.cadastro-footer { /* Rodapés de login e cadastro */
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-borda-suave);
+    font-size: 13px;
+    color: var(--cor-texto-label);
+}
+
+.login-footer p,
+.cadastro-footer p {
+    margin-bottom: 10px;
+}
+
+.signup-link,
+.login-link { /* Links para troca entre login/cadastro */
+    color: var(--cor-primaria-forte);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.signup-link:hover,
+.login-link:hover {
+    color: var(--cor-primaria-hover);
+    text-decoration: underline;
+}
+
+.error-message {
+    color: var(--cor-erro);
+    margin-top: 15px;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+/* Estilos para quando a senha está visível */
+.password-visible .fa-eye {
+    display: none;
+}
+.password-visible .fa-eye-slash {
+    display: block;
+}
+
+/* Estilos para o botão de voltar (mantido) */
+.back-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--cor-fundo-card-base);
+    color: var(--cor-texto-escuro);
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.back-button i {
+    margin-right: 8px;
+    font-size: 14px;
+}
+.back-button:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+    color: var(--cor-texto-escuro);
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    /* Estilos responsivos para card */
+    .login-card,
+    .cadastro-card {
+        padding: 30px 25px;
+        margin: 15px;
+    }
+    h2 { /* Para ambos os cards */
+        font-size: 24px;
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+    .btn-login, .btn-cadastro {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .forgot-password,
+    .termos-link { /* Alinha links à direita em telas pequenas */
+        align-self: flex-end;
+    }
+    .login-footer, .cadastro-footer {
+        margin-top: 25px;
+    }
+
+    /* Estilos responsivos para o botão de voltar */
+    .back-button {
+        top: 15px;
+        right: 15px;
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    .back-button i {
+        margin-right: 6px;
+        font-size: 13px;
+    }
+}
